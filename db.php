@@ -4,7 +4,7 @@
 $host = 'localhost';
 $user = 'root';   // Replace with your database username
 $pass = '';       // Replace with your database password
-$db_name = 'user_system'; // Replace with your database name
+$db_name = 'userlogin'; // Replace with your database name
 
 $conn = new mysqli($host, $user, $pass, $db_name);
 

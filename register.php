@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include 'db.php';
+require_once 'db.php';
 
 $errors = [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,7 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             $stmt->bind_param("sss", $username, $email, $hashed_password);
             if ($stmt->execute()) {
-                header("Location: login.php");
+                // Redirect to login after successful registration
+                header("Location: index.php");
                 exit();
             } else {
                 $errors[] = "Error in registration.";
@@ -60,7 +61,6 @@ $conn->close();
             background-color: #45a049;
         }
         .error { color: red; font-size: 14px; }
-        .link { text-align: center; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -75,7 +75,7 @@ $conn->close();
             <input type="submit" value="Register">
         </form>
         <div class="link">
-            <p>Already have an account? <a href="login.php">Login here</a></p>
+            <p>Already have an account? <a href="index.php">Login here</a></p>
         </div>
     </div>
 </body>
