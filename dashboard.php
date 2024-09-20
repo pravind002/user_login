@@ -52,9 +52,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         </div>
 
         <!-- Logout Form -->
-        <form action="logout.php" method="POST">
+        <!-- <form action="logout.php" method="POST">
             <input type="submit" value="Logout">
-        </form>
+        </form> -->
     </div>
 </body>
 

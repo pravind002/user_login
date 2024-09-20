@@ -2,9 +2,9 @@
 // db.php - Database connection file
 
 $host = 'localhost';
-$user = 'root';   // Replace with your database username
-$pass = '';       // Replace with your database password
-$db_name = 'userlogin'; // Replace with your database name
+$user = 'root';
+$pass = '';
+$db_name = 'renu';
 
 $conn = new mysqli($host, $user, $pass, $db_name);
 
